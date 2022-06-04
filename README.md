@@ -7,14 +7,20 @@ Follow the steps below to run the project locally
 
 ### Install depencies
 Open up your terminal and run the following command to install dependencies
+
 `yarn install` or `npm install`
 
 ### Bundle files
 Next run the following command to bundle files for prod
+
 `yard build` or `npm run build`
+
 If you make changes to the `SCSS` file, run the following to compile it to `CSS`
+
 `yarn build-css` or `npm run build-css`
+
 or watch `SCSS` changes in real time
+
 `yarn watch-css` or `npm run watch-css`
 
 You can spin up the local server for preview using "Live Server"
