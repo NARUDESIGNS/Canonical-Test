@@ -13,24 +13,22 @@ async function getData(){
             postsData.push({          
                 src:  element['featured_media'],
                 title:  element.title.rendered,
+                article: element.link,
                 author:  element['_embedded']['author'][0],
                 date:  new Date(element.date),
                 type:  element.type
             })
         });
+        console.log(postsData);
         renderUI(postsData);
     } catch(err) {
         throw new Error(err);
     }
 }
 
-// Months
-const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
 // Render UI
 function renderUI(details){
     details.forEach(data => {
-        const month = data.date.toLocaleDateString().split('/')[1]; // reurns date array ['25', '08', '2020']
         const year = data.date.toLocaleDateString().split('/')[2];
         const fullDate = data.date.toDateString();
         container.innerHTML += `
@@ -39,7 +37,7 @@ function renderUI(details){
                     <div class="p-card__inner"> CLOUD AND SERVER </div>
                         <img class="p-card__image" src=${data.src}>
                         <div class="p-card__inner">
-                            <h3>${data.title} - ${months[month]} ${year}</h3>
+                            <a href="${data.article}"><h3>${data.title}</h3></a>
                         </div>
                         <div class="p-card__inner">
                             By <a href="${data.author.link}">${data.author.name}</a> on ${fullDate}
