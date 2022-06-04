@@ -19,7 +19,6 @@ async function getData(){
                 type:  element.type
             })
         });
-        console.log(postsData);
         renderUI(postsData);
     } catch(err) {
         throw new Error(err);
