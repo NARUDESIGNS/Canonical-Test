@@ -38,8 +38,8 @@ function renderUI(details){
                         <div class="p-card__inner">
                             <a href="${data.article}"><h3>${data.title}</h3></a>
                         </div>
-                        <div class="p-card__inner">
-                            By <a href="${data.author.link}">${data.author.name}</a> on ${fullDate}
+                        <div class="p-card__inner author">
+                            <i>By <a href="${data.author.link}">${data.author.name}</a> on ${fullDate}</i>
                         </div>
                         <hr class="u-no-margin--bottom">
                         <div class="p-card__inner">Article</div>
